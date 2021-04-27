@@ -1,0 +1,22 @@
+<svg width="62" height="60" viewBox="0 0 62 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M30.5 6C39.7517 6 47.4529 12.475 49.1813 21.1C55.7896 21.55 61 26.9 61 33.5C61 40.4 55.3067 46 48.2917 46H46V27V26C46 25 46 24.5 45.75 24.25C45.5 24 45 24 44 24H43H19H18C17 24 16.5 24 16.25 24.25C16 24.5 16 25 16 26V27C16 28.5 15.875 46 15.875 46H15.25C5.5 46 0 39.275 0 31C0 23.275 5.9475 16.9 13.5979 16.1C16.775 10.1 23.1546 6 30.5 6Z" fill="#4F946B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M36.1711 52.13L43.1478 44.885C43.6967 44.315 44 44 44 42.755L44 29C44 26 44 26 41.1111 26L20.8889 26C18 26 18 26 18 29L18 50C18 53 18 53 20.8889 53L34.1344 53C35.5 53 35.6367 52.685 36.1711 52.13ZM35 50L21 50L21 47L35 47L35 50ZM21 35L41 35L41 38L21 38L21 35ZM21 41L41 41L41 44L21 44L21 41ZM21 29L21 32L41 32L41 29L21 29Z" fill="#4F946B"/>
+<path d="M6 35.5H17.5" stroke="white"/>
+<circle cx="5.5" cy="35.5" r="2" fill="#4F946B" stroke="white"/>
+<path d="M10 29.5H18" stroke="white"/>
+<circle cx="9.5" cy="29.5" r="2" fill="#4F946B" stroke="white"/>
+<path d="M23.5 18L23.5 26" stroke="white"/>
+<circle cx="23.5" cy="17.5" r="2" transform="rotate(90 23.5 17.5)" fill="#4F946B" stroke="white"/>
+<path d="M30.5 12L30.5 24.5" stroke="white"/>
+<circle cx="30.5" cy="11.5" r="2" transform="rotate(90 30.5 11.5)" fill="#4F946B" stroke="white"/>
+<path d="M37.5 17L37.5 25" stroke="white"/>
+<circle cx="37.5" cy="16.5" r="2" transform="rotate(90 37.5 16.5)" fill="#4F946B" stroke="white"/>
+<path d="M51.5 41.5L46 41.5" stroke="white"/>
+<circle cx="52" cy="41.5" r="2" transform="rotate(-180 52 41.5)" fill="#4F946B" stroke="white"/>
+<line x1="55" y1="29.5" x2="44" y2="29.5" stroke="white"/>
+<circle cx="55.5" cy="29.5" r="2" transform="rotate(-180 55.5 29.5)" fill="#4F946B" stroke="white"/>
+<path d="M53.5 35.5L44 35.5" stroke="white"/>
+<circle cx="54" cy="35.5" r="2" transform="rotate(-180 54 35.5)" fill="#4F946B" stroke="white"/>
+<path d="M12 40.5H17" stroke="white"/>
+<circle cx="11.5" cy="40.5" r="2" fill="#4F946B" stroke="white"/>
+</svg>

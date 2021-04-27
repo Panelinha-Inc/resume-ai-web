@@ -1,0 +1,20 @@
+.div_navbar {
+    margin-left: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.div_navbar h1 {
+    color: #1f2526;
+}
+
+.spaced_elements {
+    margin-left: 10px;
+}
+
+.about {
+    margin-left: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+}
