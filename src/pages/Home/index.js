@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
-import NavBar from '../NavBar/index'
-import Button from 'react-bootstrap/Button'
+import NavBar from '../NavBar/index';
 
 import logo from '../../assets/logo_wbg.svg';
 import api from '../../api.js';
@@ -8,30 +7,31 @@ import api from '../../api.js';
 import './style.css';
 
 export default function Home() {
-    const [file, setFile] = useState({name: "Nenhum arquivo selecionado"});
+    const [file, setFile] = useState(null);
 
     function handleSelectFile(event) {
         if (!event.target.files) {
-        return;
+            setFile(null);
+            return;
         }
         setFile(event.target.files[0]);
     }
 
     async function handleSubmit(event) {
         event.preventDefault();
-
-        const data = new FormData();
-
-        console.log(file);
-        data.append('file', file);
-
-        const status_code = await api.post('/uploadfile', data);
-
-        alert(`Arquivo enviado com sucesso! Status Code ${status_code.status}`);
+        
+        if (file) {
+            const data = new FormData();
+            
+            data.append('file', file);
+            
+            const status_code = await api.post('/uploadfile', data);
+    
+            alert(`Arquivo enviado com sucesso! Status Code ${status_code.status}`);
+        } else {
+            alert(`Não há nenhum arquivo selecionado!`);
+        }
     }
-
-    const fileInput = useRef(null)
-    const submitInput = useRef(null)
 
     return (
         <div className="App">
@@ -43,22 +43,22 @@ export default function Home() {
             </div>
             <p className='App-text' style={{ marginTop: '9px' }}>Extraia automaticamente informações de currículos escaneados</p>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleSelectFile} type="file" ref={fileInput} style={{ display: 'none' }} className='App-input' />
-                <div style={{ marginTop: '20px' }}>
-                    <button
-                        onClick={() => fileInput.current.click()}
+                <div className='inputFile'>
+                    <input onChange={handleSelectFile} type="file" id='fileInput' />
+                    <label
+                        htmlFor='fileInput'
                         className='App-button'
                         >Selecionar arquivo
-                    </button>
-                    <span style={{ fontSize: '15px', marginTop: '10px', marginLeft: '8px'}}>{file.name}</span>
+                    </label>
+                    <span>{file ? file.name : 'Nenhum arquivo selecionado'}</span>
                 </div>
-                <button
-                    onClick={() => submitInput.current.click()}
+                
+                <input type="submit" value="Processar arquivo" id='submitInput' />
+                <label
+                    htmlFor='submitInput'
                     className='App-button'
-                    style={{marginTop: '30px'}}
-                    >Processar
-                </button>
-                <input type="submit" value="Processar arquivo" ref={submitInput} style={{ display: 'none' }} />
+                    >Processar arquivo
+                </label>
             </form>
         </header>
         </div>
