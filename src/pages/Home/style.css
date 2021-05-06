@@ -43,4 +43,34 @@
     background: #6FBF92;
     border-radius: 8px;
     font-size: 18px;
+
+    cursor: pointer;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form .inputFile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+form .inputFile span {
+    font-size: 18px; 
+    margin-top: 10px; 
+    margin-left: 8px;
+}
+
+form input {
+    display: none;
 }
