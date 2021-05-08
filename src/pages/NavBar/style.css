@@ -19,3 +19,7 @@
     margin-left: auto;
     margin-right: 20px;
 }
+
+.style_link:hover {
+    color: #4F946B;
+}

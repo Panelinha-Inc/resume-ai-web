@@ -18,10 +18,10 @@ export default function NavBar() {
               height="60"
               alt="ResumeAI logo"
             />
-            <h1 style={{marginLeft: '10px'}}>ResumeAI</h1>
+            <h1 class='style_link' style={{marginLeft: '10px'}}>ResumeAI</h1>
           </Link>
           <Link style={{textDecoration: 'none'}} className='about' to='/about'>
-            <h1>About</h1>
+            <h1 class='style_link'>About</h1>
           </Link>
         </div>
       </Navbar.Brand>

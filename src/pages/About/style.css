@@ -43,8 +43,6 @@
 .div_box_developer {
     width: 310px;
     height: 198px;
-    left: calc(50% - 477px/2 - 250.5px);
-    top: calc(50% - 198px/2);
     background: #FFF;
     border-radius: 20px;
     font-size: 18px;
@@ -65,9 +63,9 @@
 
 .profile img {
     border-radius: 100%;
-    border: 5px solid #4F946B;
+    border: 4px solid #4F946B;
     box-sizing: border-box;
-    border-right-color: transparent;
+    /*border-right-color: transparent;*/
     /* Rotate the circle */
     /*transform: rotate(45deg);*/
 }
