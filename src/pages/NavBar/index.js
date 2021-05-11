@@ -11,14 +11,18 @@ export default function NavBar() {
     <Navbar bg="light">
       <Navbar.Brand>
         <div className='div_navbar'>
-          <img
-            src={logo}
-            width="62"
-            height="60"
-            alt="ResumeAI logo"
-          />
-          <h1 className='spaced_elements'>ResumeAI</h1>
-          <h1 className='about'>About</h1>
+          <Link className='spaced_elements' style={{textDecoration: 'none'}} to='/'>
+            <img
+              src={logo}
+              width="62"
+              height="60"
+              alt="ResumeAI logo"
+            />
+            <h1 class='style_link' style={{marginLeft: '10px'}}>ResumeAI</h1>
+          </Link>
+          <Link style={{textDecoration: 'none'}} className='about' to='/about'>
+            <h1 class='style_link'>About</h1>
+          </Link>
         </div>
       </Navbar.Brand>
     </Navbar>

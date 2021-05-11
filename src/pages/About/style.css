@@ -1,0 +1,71 @@
+.container {
+    background-color: #f2f2f2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.div_about {
+    font-size: 18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 150px 20px 150px;
+    background-color: #FFF;
+    border-radius: 20px;
+}
+
+.div_about p {
+    margin: 5% auto;
+    margin-left: 10px;
+    font-size: 22px;
+    padding-top: 30px;
+    padding-right: 30px;
+    text-align: center;
+    white-space: pre-line;
+}
+
+.div_about img {
+    margin-left: 40px;
+}
+
+.div_box_team_grid {
+    margin: 40px 150px 20px 150px;
+}
+
+.div_box_team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.div_box_developer {
+    width: 310px;
+    height: 198px;
+    background: #FFF;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.box_content {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile img {
+    border-radius: 100%;
+    border: 4px solid #4F946B;
+    box-sizing: border-box;
+    /*border-right-color: transparent;*/
+    /* Rotate the circle */
+    /*transform: rotate(45deg);*/
+}
