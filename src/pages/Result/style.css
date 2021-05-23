@@ -1,0 +1,47 @@
+.app {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+
+  
+  
+  background-color: #f2f2f2;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 90%;
+}
+
+.pdf-box {
+  
+}
+
+.pdf-box img {
+  width: 90%;
+}
+
+.data-box {
+  text-align: left;
+  flex-direction: column;
+  
+  padding: 13px;
+  
+  background-color: #fff;
+}
+
+.data-box hr {
+  height: 1px;
+  border: 0;
+  background: #f2f2f2;
+}
+
+.data-box b {
+  color: #4F946B;
+}
