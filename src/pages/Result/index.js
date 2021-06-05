@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import NavBar from '../NavBar/index';
 
 import './style.css';
 
-import cv_image from './74d83d045a54df5bc6259ae7ad279c21_00.png';
+import cv_image_00 from './74d83d045a54df5bc6259ae7ad279c21_00.png';
+import cv_image_01 from './74d83d045a54df5bc6259ae7ad279c21_01.png';
 
 export default function Result() {
+  const [images, setImages] = useState([cv_image_00, cv_image_01]);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
   return (
     <div className='app'>
       <NavBar />
@@ -15,7 +20,25 @@ export default function Result() {
 
         <div className='content'>
           <div className='pdf-box'>
-            <img src={cv_image} alt='Page 1' />
+            <div className='controller'>
+              <button onClick={() => {
+                setActiveImageIndex(activeImageIndex - 1);
+              }}><FiChevronLeft size={40} color="#6FBF92" /></button>
+
+              <button style={{left: 0}} onClick={() => {
+                setActiveImageIndex(activeImageIndex + 1);
+              }}><FiChevronRight size={40} color="#6FBF92" /></button>
+            </div>
+
+            {images.map((image, index) => {
+              return (
+                <img 
+                src={image}
+                className={index === activeImageIndex ? 'active' : ''}  
+                alt={`Página ${(index + 1)}`} 
+                />
+                );
+            })}
           </div>
 
           <div className='data-box'>

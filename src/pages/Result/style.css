@@ -17,11 +17,30 @@
 }
 
 .pdf-box {
-  
+  position: relative;
 }
 
 .pdf-box img {
   width: 95%;
+  display: none;
+}
+
+.pdf-box img.active {
+  display: block;
+}
+
+.controller {
+  display: flex;
+  justify-content: space-between;
+
+  width: 95%;
+  position: absolute;
+}
+
+.pdf-box button {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .data-box {
