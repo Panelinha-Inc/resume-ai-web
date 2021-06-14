@@ -1,0 +1,113 @@
+{
+    "dados_pessoais": {
+        "name": "Jederson Sousa Luz",
+        "contato": {
+            "telefone": "+55 89 99459-2287",
+            "email": "jedersonalpha@gmail.com"
+        },
+        "cidade": null,
+        "coords": {
+            "top": null,
+            "left": null,
+            "width": null,
+            "height": null
+        }
+    },
+    "experiencias": {
+        "itens": [
+            {
+                "empresa": "Universidade Federal do Piauí - UFPI",
+                "cargo": "Pesquisador em Visão e Inteligência Computacional",
+                "ano_inicio": "2018",
+                "ano_fim": "Presente",
+                "descricao": null,
+                "trabalho_atual": true
+            },
+            {
+                "empresa": "Lawtech JurisfAI",
+                "cargo": "Estagiário em Processamento de Linguagem Natural e Machine Learning",
+                "ano_inicio": "2020",
+                "ano_fim": "2021",
+                "descricao": null,
+                "trabalho_atual": false
+            }
+        ],
+        "coords": {
+            "top": null,
+            "left": null,
+            "width": null,
+            "height": null
+        }
+    },
+    "educacao": {
+        "itens": [
+            {
+                "nivel": "Graduação",
+                "curso": "Bacharelado em Sistemas de Informação",
+                "instituição": "Universidade Federal do Piauí - UFPI",
+                "ano_inicio": "2017",
+                "ano_conclusao": "2021"
+            },
+            {
+                "nivel": "Médio/Técnico",
+                "curso": "Médio/Técnico em Informática",
+                "instituição": "Instituto Federal do Piauí - IFPI",
+                "ano_inicio": "2012",
+                "ano_conclusao": "2016"
+            }
+        ],
+        "coords": {
+            "top": null,
+            "left": null,
+            "width": null,
+            "height": null
+        }
+    },
+    "linguagens": {
+        "itens": [
+            {
+                "lingua": "Português",
+                "nivel": "Nativo"
+            },
+            {
+                "lingua": "Inglês",
+                "nivel": "Intermediário"
+            }
+        ],
+        "coords": {
+            "top": null,
+            "left": null,
+            "width": null,
+            "height": null
+        }
+    },
+    "complementares": {
+        "itens": [
+            {
+                "curso": null,
+                "instituicao": null,
+                "data_conclusao": null
+            },
+            {
+                "curso": null,
+                "instituicao": null,
+                "data_conclusao": null
+            },
+            {
+                "curso": null,
+                "instituicao": null,
+                "data_conclusao": null
+            }
+        ],
+        "coords": {
+            "top": null,
+            "left": null,
+            "width": null,
+            "height": null
+        }
+    },
+    "paginas": [
+        "74d83d045a54df5bc6259ae7ad279c21_00.png",
+        "74d83d045a54df5bc6259ae7ad279c21_01.png"
+    ]
+}
