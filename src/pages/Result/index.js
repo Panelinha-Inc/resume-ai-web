@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 import NavBar from '../NavBar/index';
 
 import './style.css';
 
-import cv_image_00 from './74d83d045a54df5bc6259ae7ad279c21_00.png';
-import cv_image_01 from './74d83d045a54df5bc6259ae7ad279c21_01.png';
+import result from './output.json';
 
 export default function Result() {
-  const [images, setImages] = useState([cv_image_00, cv_image_01]);
+  const [images, setImages] = useState([]);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  useEffect(() => {
+    setImages(result.paginas);
+  }, []);
 
   return (
     <div className='app'>
@@ -22,18 +25,19 @@ export default function Result() {
           <div className='pdf-box'>
             <div className='controller'>
               <button onClick={() => {
-                setActiveImageIndex(activeImageIndex - 1);
+                activeImageIndex > 0 ? setActiveImageIndex(activeImageIndex - 1) : setActiveImageIndex(activeImageIndex);
               }}><FiChevronLeft size={40} color="#6FBF92" /></button>
 
               <button style={{left: 0}} onClick={() => {
                 setActiveImageIndex(activeImageIndex + 1);
+                activeImageIndex < (images.length - 1) ? setActiveImageIndex(activeImageIndex + 1) : setActiveImageIndex(activeImageIndex);
               }}><FiChevronRight size={40} color="#6FBF92" /></button>
             </div>
 
             {images.map((image, index) => {
               return (
                 <img 
-                src={image}
+                src={`images/${image}`}
                 className={index === activeImageIndex ? 'active' : ''}  
                 alt={`Página ${(index + 1)}`} 
                 />
@@ -43,33 +47,31 @@ export default function Result() {
 
           <div className='data-box'>
             <p>
-              <b>Nome:</b> Jederson Sousa Luz
+              <b>Dados Pessoais:</b><br />
+              <b>Nome:</b> {result.dados_pessoais.name} <br />
+              <b>Telefone:</b> {result.dados_pessoais.contato.telefone} <br />
+              <b>Email:</b> {result.dados_pessoais.contato.email} <br />
             </p>
             <hr />
             <p>
               <b>Educação:</b><br />
-                Bacharelado em Sistemas de Informação<br />2017 - Presente<br /><hr />
-                Médio/Técnico em Informática<br />2012 - 2017<br />
+                {result.educacao.itens.map((item, index) => {
+                  return (
+                    <>
+                    {item.curso}<br />{item.ano_inicio} - {item.ano_conclusao}<br /><hr />
+                    </>
+                  );
+                })}
             </p>
-            <hr />
             <p>
               <b>Experiência profissional:</b><br />
-                Pesquisador em Visão e Inteligência Computacional<br />Universidade Federal do Piauí - UFPI<br />2018 - Presente<hr />
-                Estagiário em Processamento de  Linguagem Natural e Machine Learning<br />Lawtech JurisfAI<br />Jul 2020 - Fev 2021 <br />
-            </p>
-            <hr />
-            <p>
-              <b>Procurando por:</b><br />
-              “Trabalhar em uma organização onde
-               eu possa agregar desenvolvendo
-               solução com Inteligência Artificial e
-               Algoritmos de Machine Learning,
-               aplicados ao processamento de
-               imagens, áudios e/ou texto. Busco um
-               ambiente onde eu possa aperfeiçoar
-               minhas habilidades técnicas e
-               profissionais e crescer junto da
-               organização.”
+                {result.experiencias.itens.map((item, index) => {
+                  return (
+                    <>
+                    {item.cargo}<br />{item.empresa}<br />{item.ano_inicio} - {item.ano_fim}<br /><hr />
+                    </>
+                  );
+                })}
             </p>
           </div>
         </div>
