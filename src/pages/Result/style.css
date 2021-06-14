@@ -17,11 +17,13 @@
 }
 
 .pdf-box {
+  overflow: hidden;
+  width: 49%;
   position: relative;
 }
 
 .pdf-box img {
-  width: 95%;
+  width: 100%;
   display: none;
 }
 
@@ -33,7 +35,7 @@
   display: flex;
   justify-content: space-between;
 
-  width: 95%;
+  width: 100%;
   position: absolute;
 }
 
@@ -48,6 +50,7 @@
   flex-direction: column;
   
   padding: 13px;
+  width: 47%;
   
   background-color: #fff;
 }
