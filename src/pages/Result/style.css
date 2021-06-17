@@ -1,0 +1,66 @@
+.app {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  
+  background-color: #f2f2f2;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+
+  width: 90%;
+}
+
+.pdf-box {
+  overflow: hidden;
+  width: 49%;
+  position: relative;
+}
+
+.pdf-box img {
+  width: 100%;
+  display: none;
+}
+
+.pdf-box img.active {
+  display: block;
+}
+
+.controller {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  position: absolute;
+}
+
+.pdf-box button {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.data-box {
+  text-align: left;
+  flex-direction: column;
+  
+  padding: 13px;
+  width: 47%;
+  
+  background-color: #fff;
+}
+
+.data-box hr {
+  height: 1px;
+  border: 0;
+  background: #f2f2f2;
+}
+
+.data-box b {
+  color: #4F946B;
+}
