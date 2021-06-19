@@ -1,0 +1,42 @@
+.row {
+    display: flex;
+}
+
+.column1 {
+    height: 100vh;
+    background-color: #6FBF94;
+    justify-content: center;
+    align-items: center;
+}
+
+.column2 {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 30;
+}
+
+.column1 p {
+    font-size: 18px;
+    text-align: center;
+}
+
+.content_column {
+    margin-top: 250px;
+    margin-left: 10px;
+}
+
+.column1-div-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -10px;
+}
+
+.column1-div-logo h1 {
+    font-size: 48px;
+    margin-left: -40px;
+    margin-top: 60px;
+}
