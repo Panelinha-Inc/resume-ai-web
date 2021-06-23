@@ -25,7 +25,7 @@
 }
 
 .content_column {
-    margin-top: 250px;
+    margin-top: 280px;
 }
 
 .column1-div-logo {
@@ -76,8 +76,4 @@
     text-indent: 28px;
     font-size: 18px;
     border-radius: 5px;
-}
-
-button:hover {
-    background-color: #71AB8C;
 }

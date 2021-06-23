@@ -1,11 +1,11 @@
 import React from "react";
 import './style.css';
 import logo from '../../assets/logo_wbg_2.svg';
-import { FiMail } from "react-icons/fi";
+import { FiMail, FiUser } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import {useHistory} from 'react-router-dom';
 
-export default function Login() {
+export default function SignUp() {
 
     const history = useHistory();
 
@@ -22,10 +22,20 @@ export default function Login() {
             </div>
 
             <div className="column2">
-                <div style={{marginTop: '260px'}}>
-                    <h1 style={{fontSize: '48px', textAlign: 'center'}}>Login</h1>
+                <div style={{marginTop: '200px'}}>
+                    <h1 style={{fontSize: '48px', textAlign: 'center'}}>Crie sua conta</h1>
                     <form onSubmit={() => {}}>
                         <label className='style_label'>
+                            <i className='icon'><FiUser color="#AAA9A9" size="28px"/></i>
+                            <input
+                                name="name"
+                                type="text"
+                                placeholder="Nome"
+                                id='input_id'
+                                style={{marginBottom: '20px'}}
+                                required
+                            />
+
                             <i className='icon'><FiMail color="#AAA9A9" size="28px"/></i>
                             <input
                                 name="email"
@@ -42,21 +52,27 @@ export default function Login() {
                                 type="password"
                                 placeholder="Senha"
                                 id='input_id'
+                                style={{marginBottom: '20px'}}
+                                required
+                            />
+
+                            <i className='icon'><RiLockPasswordLine color="#AAA9A9" size="30px"/></i>
+                            <input
+                                name="confirm_password"
+                                type="password"
+                                placeholder="Confirmar senha"
+                                id='input_id'
                                 required
                             />
                         </label>
                         <div className='div_button'>
-                            <button 
-                                type="submit"
-                                className='button_form'
-                                formNoValidate
-                                onClick={() => {history.push('/signup')}}
-                            >Criar conta</button>
-
                             <button
                                 type="submit"
                                 className='button_form'
-                            >Entrar</button>
+                                formNoValidate
+                                onClick={() => {history.push('/')}}
+                            >Voltar</button>
+                            <button type="submit" className='button_form'>Cadastrar</button>
                         </div>
                     </form>
                 </div>
