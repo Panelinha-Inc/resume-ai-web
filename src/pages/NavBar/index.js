@@ -15,7 +15,6 @@ export default function NavBar() {
             <img
               src={logo}
               width="62"
-              height="60"
               alt="ResumeAI logo"
             />
             <h1 class='style_link' style={{marginLeft: '10px'}}>ResumeAI</h1>

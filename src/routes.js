@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import Result from './pages/Result';
 
 export default function Routes() {
     return (
@@ -14,6 +15,7 @@ export default function Routes() {
                 <Route path="/signup" exact component={SignUp}/>
                 <Route path="/home" exact component={Home}/>
                 <Route path="/about" exact component={About}/>
+                <Route path="/result" exact component={Result}/>
             </Switch>
         </BrowserRouter>
     );
