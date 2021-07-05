@@ -14,7 +14,7 @@ export default function About() {
     return (
         <div>
             <NavBar/>
-            <header className='container'>
+            <header className='container' style={{display: 'table-row'}}>
                 <div className='div_about'>
                     <img src={img_about} alt="logo" width="300" height="300"/>
                     <p>
