@@ -22,7 +22,7 @@ export default function NavBar() {
     <Navbar bg="light">
       <Navbar.Brand>
         <div>
-          <ul class="topnav">
+          <ul className="topnav">
             <li>
               <Link className='spaced_elements' style={{textDecoration: 'none', display: 'flex'}} to='/home'>
                 <img
@@ -30,27 +30,27 @@ export default function NavBar() {
                   width="62"
                   alt="ResumeAI logo"
                 />
-                <h1 class='style_link' style={{marginLeft: '10px'}}>ResumeAI</h1>
+                <h1 className='style_link' style={{marginLeft: '10px'}}>ResumeAI</h1>
               </Link>
             </li>
-            <li class="right">
-              <a href="javascript:void(0);" onClick={myFunction}>
+            <li className="right">
+              <i onClick={myFunction}>
                   <img
                       src={example_user}
                       width="45"
                       alt="User profile"
-                      style={{borderRadius: '300px', padding: '12px'}}
+                      style={{borderRadius: '300px', padding: '12px', cursor: 'pointer'}}
                   />
-              </a>
+              </i>
             </li>
-            <li class="right">
+            <li className="right">
               <Link style={{textDecoration: 'none'}} className='about' to='/about'>
-                <h1 class='style_link'>Sobre</h1>
+                <h1 className='style_link'>Sobre</h1>
               </Link>
             </li>
-            <li class="right">
+            <li className="right">
               <Link style={{textDecoration: 'none'}} className='about' to='/my_resumes'>
-                <h1 class='style_link'>Meus currículos</h1>
+                <h1 className='style_link'>Meus currículos</h1>
               </Link>
             </li>
           </ul>
