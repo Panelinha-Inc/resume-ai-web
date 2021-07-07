@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import './style.css';
 import logo from '../../assets/logo_wbg_2.svg';
 import { FiMail } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import {useHistory} from 'react-router-dom';
+import api from "../../api";
+import ls from 'local-storage';
 
 export default function Login() {
 
     const history = useHistory();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        const status_code = await api.get('/login', {
+            'auth': {
+                'username': email,
+                password
+            }
+        });
+
+        if (status_code.data.status_code === 200) {
+            ls.set('user-info', status_code.data.data);
+            history.push('/home');
+        } else {
+            alert(`Error message: ${status_code.data.data}`);
+        }
+    }
 
     return (
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gridGap: 20 }}>
@@ -24,13 +47,15 @@ export default function Login() {
             <div className="column2">
                 <div style={{marginTop: '260px'}}>
                     <h1 style={{fontSize: '48px', textAlign: 'center'}}>Login</h1>
-                    <form onSubmit={() => {}}>
+                    <form onSubmit={handleSubmit}>
                         <label className='style_label'>
                             <i className='icon'><FiMail color="#AAA9A9" size="28px"/></i>
                             <input
                                 name="email"
                                 type="email"
                                 placeholder="Email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
                                 id='input_id'
                                 style={{marginBottom: '20px'}}
                                 required
@@ -40,6 +65,8 @@ export default function Login() {
                             <input
                                 name="password"
                                 type="password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
                                 placeholder="Senha"
                                 id='input_id'
                                 required
