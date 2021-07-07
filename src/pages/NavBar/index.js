@@ -3,6 +3,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import { FiUser, FiEdit, FiLogOut } from "react-icons/fi";
 import './style.css';
+import ls from 'local-storage';
 
 import logo from '../../assets/logo.svg';
 import example_user from '../../assets/vitoria.jpeg';
@@ -66,7 +67,7 @@ export default function NavBar() {
           <i><FiEdit color="#1f2526" size="26px"/></i>
           <p>Editar perfil</p>
         </Link>
-        <Link style={{textDecoration: 'none'}} to='/'>
+        <Link style={{textDecoration: 'none'}} to='/' onClick={() => ls.set('user-info', null)}>
           <i><FiLogOut color="#1f2526" size="26px"/></i>
           <p>Sair</p>
         </Link>
