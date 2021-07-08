@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import { FiUser, FiEdit, FiLogOut } from "react-icons/fi";
@@ -8,11 +8,11 @@ import './style.css';
 import ls from 'local-storage';
 
 import logo from '../../assets/logo.svg';
-import example_user from '../../assets/vitoria.jpeg';
 
 export default function NavBar() {
 
   const history = useHistory();
+  const [user, ] = useState(ls.get('user-info'));
 
   function myFunction() {
     var x = document.getElementById("myLinks");
@@ -70,7 +70,7 @@ export default function NavBar() {
             <li className="right">
               <i onClick={myFunction}>
                   <img
-                      src={example_user}
+                      src={user['profilePic']}
                       width="45"
                       alt="User profile"
                       style={{borderRadius: '300px', padding: '12px', cursor: 'pointer'}}
@@ -94,7 +94,7 @@ export default function NavBar() {
         <div style={{borderTop: '1px solid #f2f2f2'}}/>
         <Link style={{textDecoration: 'none'}} to='/'>
           <i><FiUser color="#1f2526" size="26px"/></i>
-          <p>Ver perfil</p>
+          <p>{user['displayName']}</p>
         </Link>
         <Link style={{textDecoration: 'none'}} to='/'>
           <i><FiEdit color="#1f2526" size="26px"/></i>
