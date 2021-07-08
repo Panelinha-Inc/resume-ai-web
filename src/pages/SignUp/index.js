@@ -4,6 +4,7 @@ import logo from '../../assets/logo_wbg_2.svg';
 import { FiMail, FiUser } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import {useHistory} from 'react-router-dom';
+import swal from 'sweetalert';
 import api from "../../api";
 import ls from 'local-storage';
 
@@ -28,13 +29,16 @@ export default function SignUp() {
             
             if (status_code.data.status_code === 201) {
                 ls.set('user-info', status_code.data.data);
+                await swal("Cadastro realizado!", "Você será redirecionado para sua conta.", "success");
                 history.push('/home');
             } else {
-                alert(`Error message: ${status_code.data.data}`);
+                swal("Ops!", `Error message: ${status_code.data.data}`, "error");
+                //alert(`Error message: ${status_code.data.data}`);
                 console.log(status_code.data.data)
             }
         } else {
-            alert('As senhas estão diferentes')
+            //alert('As senhas estão diferentes')
+            swal("Ops!", "As senhas estão diferentes", "error");
         }
     }
 

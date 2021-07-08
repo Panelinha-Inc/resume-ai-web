@@ -3,6 +3,7 @@ import './style.css';
 import logo from '../../assets/logo_wbg_2.svg';
 import { FiMail } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
+import swal from 'sweetalert';
 import {useHistory} from 'react-router-dom';
 import api from "../../api";
 import ls from 'local-storage';
@@ -28,7 +29,8 @@ export default function Login() {
             ls.set('user-info', status_code.data.data);
             history.push('/home');
         } else {
-            alert(`Error message: ${status_code.data.data}`);
+            //alert(`Error message: ${status_code.data.data}`);
+            swal("Ops!", `Error message: ${status_code.data.data}`, "error");
         }
     }
 

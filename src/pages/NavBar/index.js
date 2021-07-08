@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
 import { FiUser, FiEdit, FiLogOut } from "react-icons/fi";
+import {useHistory} from 'react-router-dom';
+import swal from 'sweetalert';
 import './style.css';
 import ls from 'local-storage';
 
@@ -10,12 +12,43 @@ import example_user from '../../assets/vitoria.jpeg';
 
 export default function NavBar() {
 
+  const history = useHistory();
+
   function myFunction() {
     var x = document.getElementById("myLinks");
     if (x.style.display === "flex") {
       x.style.display = "none";
     } else {
       x.style.display = "flex";
+    }
+  }
+
+  async function logout() {
+    const willLogout = await swal({
+      title: "Tem certeza que deseja sair?",
+      text: "Sua sessão será encerrada.",
+      icon: "warning",
+      buttons: {
+        buttonOne: {
+          text: "Cancelar",
+          value: "firstVal",
+          visible: true,
+          className: "swal-btn-cancel",
+          closeModal: true,
+        },
+        buttonTwo: {
+          text: "Sair",
+          value: "secondVal",
+          visible: true,
+          className: "swal-btn-confirm",
+          closeModal: true
+        },
+      }
+    });
+
+    if (willLogout === "secondVal") {
+      ls.set('user-info', null);
+      history.push('/');
     }
   }
 
@@ -67,7 +100,7 @@ export default function NavBar() {
           <i><FiEdit color="#1f2526" size="26px"/></i>
           <p>Editar perfil</p>
         </Link>
-        <Link style={{textDecoration: 'none'}} to='/' onClick={() => ls.set('user-info', null)}>
+        <Link style={{textDecoration: 'none'}} onClick={logout}>
           <i><FiLogOut color="#1f2526" size="26px"/></i>
           <p>Sair</p>
         </Link>
