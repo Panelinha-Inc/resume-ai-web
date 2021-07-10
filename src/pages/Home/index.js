@@ -1,10 +1,14 @@
 import React, { useState} from "react";
 import NavBar from '../NavBar/index';
+
 import ls from 'local-storage';
-import logo from '../../assets/logo_wbg.svg';
 import api from '../../api.js';
 
+import swal from 'sweetalert';
+
 import './style.css';
+
+import logo from '../../assets/logo_wbg.svg';
 
 export default function Home() {
     const [file, setFile] = useState(null);
@@ -25,18 +29,18 @@ export default function Home() {
             const data = new FormData();
             
             data.append('file', file);
-
-            const status_code = await api.post('/uploadfile', {
-                data,
+            
+            const status_code = await api.post('/uploadfile', data, {
                 headers: {
+                    'Content-Type': 'multipart/form-data',
                     'user-id': user['localId'],
-                    'token': user['idToken']
+                    'token': user['idToken'],
                 }
             });
-        
-            alert(`Arquivo enviado com sucesso! Status Code ${status_code.status}`);
+    
+            swal('Deu tudo certo!', `Arquivo enviado com sucesso! Status Code ${status_code.status}`, 'success');
         } else {
-            alert(`Não há nenhum arquivo selecionado!`);
+            swal('Ops!', 'Não há nenhum arquivo selecionado!', 'error');
         }
     }
 
