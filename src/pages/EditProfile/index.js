@@ -29,18 +29,25 @@ export default function Login() {
         if ((filePic !== user['profilePic']) || (name !== user['displayName'])) {
             const data = new FormData();
             
-            if (filePic !== user['profilePic']) {
-                console.log(filePic)
+            if (filePic === user['profilePic']) {
+                console.log('atim')
+                const blob = new Blob([user['profilePic']], {type: 'image/png'});
+                data.append('file', new File([blob], "omermo.png", {
+                    type: blob.type,
+                }));
+            } else {
                 data.append('file', filePic);
             }
-
-            if (name !== user['displayName']) {
-                console.log(name)
-                data.append('displayName', name)
-            }
-            
-            console.log(data)
-            const status_code = await api.put('/user', data);
+            data.append('displayName', name)
+            console.log(filePic)
+            console.log(name)
+            const status_code = await api.put('/user', data, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'user-id': user['localId'],
+                    'token': user['idToken'],
+                }
+            });
             swal(`Alterações realizada com sucesso! Status Code ${status_code.status}`);
         } else {
             swal(`Sem alterações!`);
