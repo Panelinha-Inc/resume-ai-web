@@ -7,7 +7,7 @@ import './style.css';
 import api from '../../api.js';
 
 
-export default function Login() {
+export default function EditProfile() {
 
     const [user, ] = useState(ls.get('user-info'));
     const [name, setName] = useState(user['displayName']);
