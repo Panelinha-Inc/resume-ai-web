@@ -52,17 +52,16 @@ export default function Login() {
         } else {
             swal(`Sem alterações!`);
         }
-    }
+    } 
 
     return (
         <div className='App'>
             <NavBar/>
-            <div className='App-body'>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gridGap: 5, width: 800 }}>
+            <div className='App-body' style={{height : '88vh'}}>
+                <div className='card' style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gridGap: 10 }}>
                     <div className='column_profile'>
                         <img
                             src={urlImage}
-                            width="45"
                             alt="User profile"
                             onClick={() => fileInput.current.click()}
                             style={{borderRadius: '100px', cursor: 'pointer', width: 100, height: 100}}
@@ -73,24 +72,28 @@ export default function Login() {
                             ref={fileInput}
                             onChange={onChange}
                             style={{ display: 'none' }}
-                            />
+                        />
                         <p>{user['email']}</p>
                     </div>
                     <div className='column_editable'>
                         <form onSubmit={handleSubmit}>
-                            <p>Nome</p>
+                            <span>
+                                
+                            <label for='fname' style={{float: 'left'}}>Nome:</label>
                             <input
                                 name="name"
                                 type="name"
                                 value={name}
                                 onChange={e => setName(e.target.value)}
                                 placeholder="Nome"
-                                id='isadprofile'
+                                id='fname'
                             />
-                            <button>Salvar alterações</button>
+                            </span>
+                            <br></br>
+                            <button className='button_forma'>Salvar alterações</button>
                         </form>
                         <p>Esqueceu a senha?</p>
-                        <button>Redefinir senha</button>
+                        <button className='button_forma'>Redefinir senha</button>
                     </div>
                 </div>
             </div>
