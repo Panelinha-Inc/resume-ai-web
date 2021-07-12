@@ -48,11 +48,42 @@ export default function Login() {
                     'token': user['idToken'],
                 }
             });
-            swal(`Alterações realizada com sucesso! Status Code ${status_code.status}`);
+            if (status_code.status === 200) {
+                swal({title: `Alterações realizada com sucesso!`, text:`Status Code ${status_code.status}`, icon:'success'});
+                user['displayName'] = name;
+                console.log(user)
+                ls.set('user-info', user)
+            } else {
+                swal({
+                    title: 'Erro',
+                    text: `${status_code}`,
+                    icon: 'error'
+                })
+            }
         } else {
-            swal(`Sem alterações!`);
+            swal({title: `Sem alterações!`, icon: "info"});
         }
     } 
+
+    async function handleNewPass() {
+        const status_code = await api.post('/resetpassword', {
+            'email': user['email']
+        });
+
+        if (status_code.status === 'success') {
+            swal({
+                title: 'Sucesso',
+                text: 'Verifique o email',
+                icon: 'success'
+            });
+        } else {
+            swal({
+                title: 'Erro',
+                text: `${status_code.data}`,
+                icon: 'error'
+            });
+        }
+    }
 
     return (
         <div className='App'>
@@ -93,7 +124,7 @@ export default function Login() {
                             <button className='button_forma'>Salvar alterações</button>
                         </form>
                         <p>Esqueceu a senha?</p>
-                        <button className='button_forma'>Redefinir senha</button>
+                        <button onClick={handleNewPass} className='button_forma'>Redefinir senha</button>
                     </div>
                 </div>
             </div>
