@@ -43,12 +43,12 @@ export default function MyResumes() {
                                         <img src={iconDown} className="center-item" alt="Download" width="24" height="24"/>
                                         <p className="center-item">PDF</p>
                                     </div> */}
-                                    <p className="center-item">Nome:</p>
+                                    <p className="center-item" style={{marginRight: '5px'}}>Nome:</p>
                                     <p className="center-item">{element.fileId}</p>
                                 </div>
                                 <div className='fxr'>
                                     <div className='process-bar border-all' style={{backgroundColor: (element.status === 'processed')? '#6FBF94': '#FFED4B'}}>
-                                        <p className="process center-item">Processado</p>
+                                        <p className="process center-item">{(element.status === 'processed')? 'Processado': 'Processando'}</p>
                                     </div>
                                     {/* <img src={iconDel} className='iconDel center-item' alt='Delete' width="24" height="24"/> */}
                                 </div>
