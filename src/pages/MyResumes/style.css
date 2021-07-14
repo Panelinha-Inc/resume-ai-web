@@ -6,23 +6,21 @@
     width: 90%;
     height: 80%;
     display: grid;
-    grid-template: [header-left] "m head" 10% [header-right]
-                   [main-left]   "nav  main" 1fr  [main-right]
-                   / 200px 1fr;
+    grid-template: [header-left] "m head" 10% [header-right] [main-left] "nav  main" 1fr [main-right] / 200px 1fr;
     row-gap: 10px;
     column-gap: 10px;
-  }
-  
+}
+
 .search-bar {
     grid-area: head;
 }
-  
+
 .container-filter {
     grid-area: nav;
     padding: 6px;
     color: #1f2526;
 }
-  
+
 .container-cv {
     grid-area: main;
     padding: 20px;
@@ -62,7 +60,7 @@
     border: none;
 }
 
-.item-cv{
+.item-cv {
     display: flex;
     border-style: solid;
     border-color: #6FBF94;

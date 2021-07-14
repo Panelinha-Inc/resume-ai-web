@@ -44,7 +44,7 @@ export default function MyResumes() {
                                         <p className="center-item">PDF</p>
                                     </div> */}
                                     <p className="center-item" style={{marginRight: '5px'}}>Nome:</p>
-                                    <p className="center-item">{element.fileId}</p>
+                                    <p className="center-item">{element['Dados pessoais'].Nome}</p>
                                 </div>
                                 <div className='fxr'>
                                     <div className='process-bar border-all' style={{backgroundColor: (element.status === 'processed')? '#6FBF94': '#FFED4B'}}>
