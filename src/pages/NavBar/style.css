@@ -56,15 +56,16 @@ ul.topnav li.right {
     flex-direction: column;
     justify-content: left;
     text-align: left;
+    z-index: 2;
 }
 
-#myLinks p {
+.p_link {
     margin-left: 45px;
     color: #1f2526;
     font-size: large;
 }
 
-#myLinks p:hover {
+.p_link:hover {
     color: #4F946B;
 }
 

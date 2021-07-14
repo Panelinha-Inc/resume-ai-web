@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import NavBar from '../NavBar/index';
 import ls from 'local-storage';
+import {useHistory} from 'react-router-dom';
 import swal from 'sweetalert';
 import './style.css';
 
@@ -13,6 +14,7 @@ export default function EditProfile() {
     const [name, setName] = useState(user['displayName']);
     const [filePic, setfilePic] = useState(user['profilePic']);
     const [urlImage, setUrlImage] = useState(user['profilePic'])
+    const history = useHistory();
     const fileInput = useRef(null);
     const urlImg = URL;
 
@@ -49,10 +51,12 @@ export default function EditProfile() {
                 }
             });
             if (status_code.status === 200) {
-                swal({title: `Alterações realizada com sucesso!`, text:`Status Code ${status_code.status}`, icon:'success'});
+                swal({title: `Alterações realizadas com sucesso!`, text:`Status Code ${status_code.status}`, icon:'success'});
                 user['displayName'] = name;
-                console.log(user)
+                user['profilePic'] = urlImage;
+                console.log(user);
                 ls.set('user-info', user)
+                history.push('/home')
             } else {
                 swal({
                     title: 'Erro',

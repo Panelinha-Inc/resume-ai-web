@@ -73,7 +73,7 @@ export default function NavBar() {
                       src={user['profilePic']}
                       width="45"
                       alt="User profile"
-                      style={{borderRadius: '300px', padding: '12px', cursor: 'pointer'}}
+                      style={{padding: '12px', borderRadius: '100px', cursor: 'pointer', width: 50, height: 50}}
                   />
               </i>
             </li>
@@ -92,17 +92,16 @@ export default function NavBar() {
       </Navbar.Brand>
       <div id="myLinks">
         <div style={{borderTop: '1px solid #f2f2f2'}}/>
-        {/* <div style={{textDecoration: 'none'}} >
-          <i><FiUser color="#1f2526" size="26px"/></i>
-          <p>{user['displayName']}</p>
-        </div> */}
+        <div style={{textDecoration: 'none'}} >
+          <p style={{margin: '0px', marginTop: '10px', textAlign: 'center', fontSize: '20px'}}><b>{user['displayName']}</b></p>
+        </div>
         <Link style={{textDecoration: 'none'}} to='/profile'>
           <i><FiEdit color="#1f2526" size="26px"/></i>
-          <p>Editar perfil</p>
+          <p className="p_link">Editar perfil</p>
         </Link>
         <Link style={{textDecoration: 'none'}} onClick={logout}>
           <i><FiLogOut color="#1f2526" size="26px"/></i>
-          <p>Sair</p>
+          <p className="p_link">Sair</p>
         </Link>
       </div>
     </Navbar>
