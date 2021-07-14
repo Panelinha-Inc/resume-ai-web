@@ -92,10 +92,10 @@ export default function NavBar() {
       </Navbar.Brand>
       <div id="myLinks">
         <div style={{borderTop: '1px solid #f2f2f2'}}/>
-        {/* <div style={{textDecoration: 'none'}} >
+        <div style={{textDecoration: 'none'}} >
           <i><FiUser color="#1f2526" size="26px"/></i>
           <p>{user['displayName']}</p>
-        </div> */}
+        </div>
         <Link style={{textDecoration: 'none'}} to='/profile'>
           <i><FiEdit color="#1f2526" size="26px"/></i>
           <p>Editar perfil</p>
