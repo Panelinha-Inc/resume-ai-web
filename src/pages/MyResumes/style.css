@@ -1,6 +1,135 @@
-.container {
-    background-color: #f2f2f2;
-    min-height: 100vh;
+#page {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 80%;
+    display: grid;
+    grid-template: [header-left] "m head" 10% [header-right]
+                   [main-left]   "nav  main" 1fr  [main-right]
+                   / 200px 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
+  
+.search-bar {
+    grid-area: head;
+}
+  
+.container-filter {
+    grid-area: nav;
+    padding: 6px;
+    color: #1f2526;
+}
+  
+.container-cv {
+    grid-area: main;
+    padding: 20px;
+}
+
+.search-cv-btn {
+    height: 100%;
+    width: 10%;
+    float: right;
+    border: none;
+    background-color: #6FBF94;
+    color: #F2F2F2;
+    font-size: 18px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.icon-cv {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    float: left;
+    margin-left: 10px;
+}
+
+.search-cv-inp {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    height: 80%;
+    width: 85%;
+    float: left;
+    border: none;
+    font-size: 18px;
+}
+
+.search-cv-inp:focus-visible {
+    border: none;
+}
+
+.item-cv{
     display: flex;
-    flex-direction: column;
+    border-style: solid;
+    border-color: #6FBF94;
+    width: 100%;
+    height: 40px;
+    padding: 2px;
+    margin-bottom: 8px;
+    justify-content: space-between;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-decoration: none;
+    color: #1f2526;
+}
+
+.download-pdf {
+    background-color: #F2F2F2;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 8px;
+}
+
+.center-item {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.process-bar {
+    width: 150px;
+    background-color: #6FBF94;
+    color: white;
+    height: 80%;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    text-align: center;
+}
+
+.process {
+    display: grid;
+    height: 100%;
+}
+
+.iconDel {
+    float: right;
+    margin: 0 6px 0 6px;
+}
+
+.border-all {
+    border-radius: 10px;
+}
+
+.back-all {
+    background-color: white;
+}
+
+.fxl {
+    display: flex;
+}
+
+.fxr {
+    display: flex;
+}
+
+.filter {
+    text-align: left;
 }
