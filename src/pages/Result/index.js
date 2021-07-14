@@ -5,15 +5,30 @@ import NavBar from '../NavBar/index';
 
 import './style.css';
 
-import result from './output.json';
+import { useParams } from "react-router-dom";
+import ls from 'local-storage';
+import api from '../../api';
 
 export default function Result() {
-  const [images, setImages] = useState([]);
+  const params = useParams();
+  const [user, ] = useState(ls.get('user-info'));
+  const [result, setResult] = useState();
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
-    setImages(result.paginas);
-  }, []);
+    api.get(`document/?fileId=${params.fileId}`, {
+      headers: {
+        'user-id': user['localId'],
+        'token': user['idToken'],
+      }
+    }).then(response => {
+      setResult(response.data);
+    });
+  }, [user, params]);
+
+  if (!result) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <div className='app'>
@@ -30,14 +45,15 @@ export default function Result() {
 
               <button style={{left: 0}} onClick={() => {
                 setActiveImageIndex(activeImageIndex + 1);
-                activeImageIndex < (images.length - 1) ? setActiveImageIndex(activeImageIndex + 1) : setActiveImageIndex(activeImageIndex);
+                activeImageIndex < (result.pages.length - 1) ? setActiveImageIndex(activeImageIndex + 1) : setActiveImageIndex(activeImageIndex);
               }}><FiChevronRight size={40} color="#6FBF92" /></button>
             </div>
 
-            {images.map((image, index) => {
+            {result.pages.map((image, index) => {
               return (
                 <img 
-                src={`images/${image}`}
+                src={image}
+                key={index}
                 className={index === activeImageIndex ? 'active' : ''}  
                 alt={`Página ${(index + 1)}`} 
                 />
@@ -48,12 +64,38 @@ export default function Result() {
           <div className='data-box'>
             <p>
               <b>Dados Pessoais:</b><br />
-              <b>Nome:</b> {result.dados_pessoais.name} <br />
-              <b>Telefone:</b> {result.dados_pessoais.contato.telefone} <br />
-              <b>Email:</b> {result.dados_pessoais.contato.email} <br />
+              <b>Nome:</b> {result['Dados pessoais']['name']} <br />
+              <b>Email:</b> {result['Dados pessoais']['Contato']['Email']} <br />
+              <b>GitHub:</b> <a href={result['Dados pessoais']['Contato']['GitHub']}>
+                {result['Dados pessoais']['Contato']['GitHub']}
+              </a> <br />
+              <b>LinkedIn:</b> <a href={result['Dados pessoais']['Contato']['LinkedIn']}>
+                {result['Dados pessoais']['Contato']['LinkedIn']}
+              </a> <br />
+              <b>Telefones:</b><br />
+                {result['Dados pessoais']['Contato']['Telefones'].map((telefone, index) => {
+                  return (
+                    <>
+                      &nbsp;&nbsp;&nbsp;&nbsp;{telefone}<br />
+                    </>
+                  );
+                })}
+              <b>Outros:</b><br />
+                {result['Dados pessoais']['Contato']['Outros'].map((outro, index) => {
+                  return (
+                    <>
+                      &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href={outro}>
+                        {outro}
+                      </a><br />
+                    </>
+                  );
+                })}
+                <b>Data de nascimento:</b> {result['Dados pessoais']['Data de nascimento']} <br />
+                <b>Endereço:</b> {result['Dados pessoais']['Endereço']['CEP']} <br />
             </p>
             <hr />
-            <p>
+            {/* <p>
               <b>Educação:</b><br />
                 {result.educacao.itens.map((item, index) => {
                   return (
@@ -62,8 +104,23 @@ export default function Result() {
                     </>
                   );
                 })}
-            </p>
+            </p> */}
             <p>
+              <b>Experiência profissional:</b>
+              {result['Experiências profissionais']}
+            </p>
+            <hr />
+            <p>
+              <b>Idiomas:</b><br />
+                {result['Idiomas'].map((idioma, index) => {
+                  return (
+                    <>
+                      &nbsp;&nbsp;&nbsp;&nbsp;{idioma}<br />
+                    </>
+                  );
+                })}
+            </p>
+            {/* <p>
               <b>Experiência profissional:</b><br />
                 {result.experiencias.itens.map((item, index) => {
                   return (
@@ -72,7 +129,7 @@ export default function Result() {
                     </>
                   );
                 })}
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

@@ -1,113 +1,29 @@
 {
-    "dados_pessoais": {
-        "name": "Jederson Sousa Luz",
-        "contato": {
-            "telefone": "+55 89 99459-2287",
-            "email": "jedersonalpha@gmail.com"
-        },
-        "cidade": null,
-        "coords": {
-            "top": null,
-            "left": null,
-            "width": null,
-            "height": null
-        }
-    },
-    "experiencias": {
-        "itens": [
-            {
-                "empresa": "Universidade Federal do Piauí - UFPI",
-                "cargo": "Pesquisador em Visão e Inteligência Computacional",
-                "ano_inicio": "2018",
-                "ano_fim": "Presente",
-                "descricao": null,
-                "trabalho_atual": true
-            },
-            {
-                "empresa": "Lawtech JurisfAI",
-                "cargo": "Estagiário em Processamento de Linguagem Natural e Machine Learning",
-                "ano_inicio": "2020",
-                "ano_fim": "2021",
-                "descricao": null,
-                "trabalho_atual": false
-            }
+    "Dados pessoais": {
+      "Contato": {
+        "Email": "jedersonalpha@gmail.com",
+        "GitHub": "",
+        "LinkedIn": "https://www.linkedin.com/in/jedersonluz/",
+        "Outros": [
+          "https://github.com/JedersonLuz"
         ],
-        "coords": {
-            "top": null,
-            "left": null,
-            "width": null,
-            "height": null
-        }
+        "Telefones": [
+          "89 99459-2287"
+        ]
+      },
+      "Data de nascimento": "",
+      "Endereço": {
+        "CEP": ""
+      }
     },
-    "educacao": {
-        "itens": [
-            {
-                "nivel": "Graduação",
-                "curso": "Bacharelado em Sistemas de Informação",
-                "instituição": "Universidade Federal do Piauí - UFPI",
-                "ano_inicio": "2017",
-                "ano_conclusao": "2021"
-            },
-            {
-                "nivel": "Médio/Técnico",
-                "curso": "Médio/Técnico em Informática",
-                "instituição": "Instituto Federal do Piauí - IFPI",
-                "ano_inicio": "2012",
-                "ano_conclusao": "2016"
-            }
-        ],
-        "coords": {
-            "top": null,
-            "left": null,
-            "width": null,
-            "height": null
-        }
-    },
-    "linguagens": {
-        "itens": [
-            {
-                "lingua": "Português",
-                "nivel": "Nativo"
-            },
-            {
-                "lingua": "Inglês",
-                "nivel": "Intermediário"
-            }
-        ],
-        "coords": {
-            "top": null,
-            "left": null,
-            "width": null,
-            "height": null
-        }
-    },
-    "complementares": {
-        "itens": [
-            {
-                "curso": null,
-                "instituicao": null,
-                "data_conclusao": null
-            },
-            {
-                "curso": null,
-                "instituicao": null,
-                "data_conclusao": null
-            },
-            {
-                "curso": null,
-                "instituicao": null,
-                "data_conclusao": null
-            }
-        ],
-        "coords": {
-            "top": null,
-            "left": null,
-            "width": null,
-            "height": null
-        }
-    },
-    "paginas": [
-        "74d83d045a54df5bc6259ae7ad279c21_00.png",
-        "74d83d045a54df5bc6259ae7ad279c21_01.png"
-    ]
-}
+    "Experiências profissionais": "Pesquisador em Visão e Inteligência Computacional Universidade Federal do Piauí - UFPI 2018 - Presente Picos, PI, Brasil Durante o período de Iniciação Científica Voluntária (ICV), desenvolvi projetos na área de Visão e Inteligência Computacional com enfase no processamento de sinais de áudio, como: Desenvolvimento de um descritor de áudio tradicional (handcrafted), para a descriminação compacta e eficiente de sons urbanos. Desenvolvimento de uma nova arquitetura de CNN baseada na LeNet, para a obtenção de um descritor mais robusto para a descriminação dos sons urbanos. Classificação de sons urbanos com classificadores clássicos como Random Forest e SVM, utilizando os atributos extraídos com os descritores acima citados. Além da classificação individual também foi feita a classificação com os atributos de ambos os descritores concatenados. Estagiário em Processamento de Linguagem Natural e Machine Learning Lawtech JurisfAI Jul 2020 - Fev 2021 Santos, SP, Brasil (Remoto) Durante o programa de estágio, realizei inúmeras atividades relacionadas a automação e processamento de processos jurídicos, como: Desenvolvimento de um modelo NER (Named-Entity Recognition) com a biblioteca SpaCy, para a classificação de entidades nomeadas dentro de textos jurídicos, como os nomes das partes descritas no processo, os valores atribuídos a causa processual e o tipo de processo. Desenvolvimento de Datasets para utilização no modelo NER, por meio da ferramenta de anotação chamada Universal Data Tool (UDT). Desenvolvimento de scripts de web scraping para a mineração de dados de páginas de tribunais para a construção de uma base de dados de ementas jurídicas, bem como também para a coleta de textos de leis. Para isso foram utilizados as bibliotecas requests do Python, BeautifulSoup, e selenium. Um desses scripts foi usado como desafio para ingresso na empresa e pode ser encontrado publicamente em meu GitHub. Desenvolvimento de uma base de dados SQL com Postgres para o armazenamento de textos jurídicos. Experiência na indexação de uma base de dados com a ferramenta Sonic, visando a otimização nas buscas por informações armazenadas na base. Esta ferramenta é escrita em Rust, buscando o máximo de performance que pode ser alcançada por uma linguagem de baixo nível. Para a comunicação com o servidor de indexação foi utilizada uma biblioteca Python, onde dessa forma pude juntar a performance do Rust na indexação com a facilidade de se consultar os dados por meio da API escrita em Python. Desenvolvimento de uma API para o fornecimento de informações de um banco de dados SQL, onde esta API foi desenvolvida utilizando a biblioteca FastAPI do Python. Experiência com a classificação de jurisprudências de acordo com as áreas do direito, onde auxiliei uma colega do estágio testando algumas abordagens para descriminar os textos em atributos, como CountVectorizer e TF-IDF. Para classificação testei classificadores clássicos como Random Forest e SVM, onde para este último foram testados todos os seus kernels diferentes afim de verificar qual teria o melhor desempenho.",
+    "Idiomas": [
+      "Português Nativo",
+      "Inglês Intermediário"
+    ],
+    "pages": [
+      "https://firebasestorage.googleapis.com/v0/b/resumeai-422d1.appspot.com/o/pdf_images%2F2wFQHW0fMGMS55969kGm43b0JOp1%2F74d83d045a54df5bc6259ae7ad279c21%2F00.png?alt=media&token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjhmNDMyMDRhMTc5MTVlOGJlN2NjZDdjYjI2NGRmNmVhMzgzYzQ5YWIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdW1lYWktNDIyZDEiLCJhdWQiOiJyZXN1bWVhaS00MjJkMSIsImF1dGhfdGltZSI6MTYyNjAzNzA3OSwidXNlcl9pZCI6IjJ3RlFIVzBmTUdNUzU1OTY5a0dtNDNiMEpPcDEiLCJzdWIiOiIyd0ZRSFcwZk1HTVM1NTk2OWtHbTQzYjBKT3AxIiwiaWF0IjoxNjI2MDM3MDc5LCJleHAiOjE2MjYwNDA2NzksImVtYWlsIjoiamVkZXJzb25hbHBoYUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJqZWRlcnNvbmFscGhhQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.Vh4co_NYipCkW9vVyB6frbOsADNM9FN8IFjyQxAr1A-P0KTiNoSqMVi9sifN-Zca6BwuYurTtdJTeTGLIk78Ukt83KK1cY6LUK7N_U-Px08aYnd6jhf8XMUIlq0Vs8al2zeFdZi_0GYaaBkuEh1lIiqelM87zTYtpGV_31u5A2vVbN49_smPJT-eQNPTkgdTy7JcKdddxPSuZhAVQStNACyQoBnuc33JEjtHFQNxQZnO0A35aWRazyggxd-APivMJ-9hmPwC2btJo6iW98OHtuzFBgdwkzVQbAMm3pTmNWbP-ot7EOFh_tqo3ADJSG_kZvgVB234wwtiap6oGYoP4w",
+      "https://firebasestorage.googleapis.com/v0/b/resumeai-422d1.appspot.com/o/pdf_images%2F2wFQHW0fMGMS55969kGm43b0JOp1%2F74d83d045a54df5bc6259ae7ad279c21%2F01.png?alt=media&token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjhmNDMyMDRhMTc5MTVlOGJlN2NjZDdjYjI2NGRmNmVhMzgzYzQ5YWIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcmVzdW1lYWktNDIyZDEiLCJhdWQiOiJyZXN1bWVhaS00MjJkMSIsImF1dGhfdGltZSI6MTYyNjAzNzA3OSwidXNlcl9pZCI6IjJ3RlFIVzBmTUdNUzU1OTY5a0dtNDNiMEpPcDEiLCJzdWIiOiIyd0ZRSFcwZk1HTVM1NTk2OWtHbTQzYjBKT3AxIiwiaWF0IjoxNjI2MDM3MDc5LCJleHAiOjE2MjYwNDA2NzksImVtYWlsIjoiamVkZXJzb25hbHBoYUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJqZWRlcnNvbmFscGhhQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.Vh4co_NYipCkW9vVyB6frbOsADNM9FN8IFjyQxAr1A-P0KTiNoSqMVi9sifN-Zca6BwuYurTtdJTeTGLIk78Ukt83KK1cY6LUK7N_U-Px08aYnd6jhf8XMUIlq0Vs8al2zeFdZi_0GYaaBkuEh1lIiqelM87zTYtpGV_31u5A2vVbN49_smPJT-eQNPTkgdTy7JcKdddxPSuZhAVQStNACyQoBnuc33JEjtHFQNxQZnO0A35aWRazyggxd-APivMJ-9hmPwC2btJo6iW98OHtuzFBgdwkzVQbAMm3pTmNWbP-ot7EOFh_tqo3ADJSG_kZvgVB234wwtiap6oGYoP4w"
+    ],
+    "status": "processed"
+  }
