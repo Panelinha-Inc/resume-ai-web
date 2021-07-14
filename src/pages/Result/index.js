@@ -16,8 +16,7 @@ export default function Result() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
-    // api.get(`document/?fileId=${params.fileId}`, {
-    api.get(`document/?fileId=74d83d045a54df5bc6259ae7ad279c21`, {
+    api.get(`document/?fileId=${params.fileId}`, {
       headers: {
         'user-id': user['localId'],
         'token': user['idToken'],
