@@ -4,8 +4,6 @@ import ls from 'local-storage';
 import { FiSearch } from "react-icons/fi";
 import {Link} from 'react-router-dom';
 
-// import iconDown from '../../assets/file_download.svg';
-// import iconDel from '../../assets/delete.svg'
 import api from '../../api.js';
 import './style.css';
 
@@ -28,7 +26,7 @@ export default function MyResumes() {
     return (
         <div className='App'>
             <NavBar/>
-            <div className='App-body' style={{height : '89vh'}}>
+            <div className='App-body' style={{height : '90vh'}}>
                 <section id="page">
                     <div className='search-bar border-all back-all'>
                         <i className='icon-cv'><FiSearch color="#AAA9A9" size="28px"/></i>
@@ -37,20 +35,15 @@ export default function MyResumes() {
                     </div>
                     <div className='container-cv border-all back-all'>
                         {result.map(element => (
-                            <Link key={element.fileId} className='item-cv border-all' to={`/results/${element.fileId}`}>
+                            <Link key={element.fileId} className='item-cv border-all' to={`/result/${element.fileId}`}>
                                 <div className='fxl'>
-                                    {/* <div className='download-pdf border-all'>
-                                        <img src={iconDown} className="center-item" alt="Download" width="24" height="24"/>
-                                        <p className="center-item">PDF</p>
-                                    </div> */}
                                     <p className="center-item" style={{marginRight: '5px'}}>Nome:</p>
-                                    <p className="center-item">{element['Dados pessoais'].Nome}</p>
+                                    <p className="center-item">{element['Dados pessoais'] ? element['Dados pessoais'].Nome : element.fileId}</p>
                                 </div>
                                 <div className='fxr'>
                                     <div className='process-bar border-all' style={{backgroundColor: (element.status === 'processed')? '#6FBF94': '#FFED4B'}}>
                                         <p className="process center-item">{(element.status === 'processed')? 'Processado': 'Processando'}</p>
                                     </div>
-                                    {/* <img src={iconDel} className='iconDel center-item' alt='Delete' width="24" height="24"/> */}
                                 </div>
                             </Link>
                         ))}

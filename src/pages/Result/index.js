@@ -16,7 +16,7 @@ export default function Result() {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
-    api.get(`document/?fileId=${params.fileId}`, {
+    api.get(`document/?fileId=${params.id}`, {
       headers: {
         'user-id': user['localId'],
         'token': user['idToken'],
@@ -24,7 +24,7 @@ export default function Result() {
     }).then(response => {
       setResult(response.data);
     });
-  }, [user, params]);
+  }, [user, params.id]);
 
   if (!result) {
     return <p>Loading...</p>;
@@ -64,7 +64,7 @@ export default function Result() {
           <div className='data-box'>
             <p>
               <b>Dados Pessoais:</b><br />
-              <b>Nome:</b> {result['Dados pessoais']['name']} <br />
+              <b>Nome:</b> {result['Dados pessoais']['Nome']} <br />
               <b>Email:</b> {result['Dados pessoais']['Contato']['Email']} <br />
               <b>GitHub:</b> <a href={result['Dados pessoais']['Contato']['GitHub']}>
                 {result['Dados pessoais']['Contato']['GitHub']}
@@ -73,7 +73,8 @@ export default function Result() {
                 {result['Dados pessoais']['Contato']['LinkedIn']}
               </a> <br />
               <b>Telefones:</b><br />
-                {result['Dados pessoais']['Contato']['Telefones'].map((telefone, index) => {
+                {result['Dados pessoais']['Contato']['Telefones'] &&
+                  result['Dados pessoais']['Contato']['Telefones'].map((telefone, index) => {
                   return (
                     <>
                       &nbsp;&nbsp;&nbsp;&nbsp;{telefone}<br />
@@ -81,7 +82,8 @@ export default function Result() {
                   );
                 })}
               <b>Outros:</b><br />
-                {result['Dados pessoais']['Contato']['Outros'].map((outro, index) => {
+                {result['Dados pessoais']['Contato']['Outros'] && 
+                  result['Dados pessoais']['Contato']['Outros'].map((outro, index) => {
                   return (
                     <>
                       &nbsp;&nbsp;&nbsp;&nbsp;
@@ -92,7 +94,8 @@ export default function Result() {
                   );
                 })}
                 <b>Data de nascimento:</b> {result['Dados pessoais']['Data de nascimento']} <br />
-                <b>Endereço:</b> {result['Dados pessoais']['Endereço']['CEP']} <br />
+                <b>Endereço:</b> {result['Dados pessoais']['Endereço']['Endereço']} <br />
+                <b>CEP:</b> {result['Dados pessoais']['Endereço']['CEP']} <br />
             </p>
             <hr />
             {/* <p>
@@ -106,13 +109,12 @@ export default function Result() {
                 })}
             </p> */}
             <p>
-              <b>Experiência profissional:</b>
-              {result['Experiências profissionais']}
+              <b>Experiência profissional:</b> {result['Experiências profissionais']}
             </p>
             <hr />
             <p>
               <b>Idiomas:</b><br />
-                {result['Idiomas'].map((idioma, index) => {
+                {result['Idiomas'] && result['Idiomas'].map((idioma, index) => {
                   return (
                     <>
                       &nbsp;&nbsp;&nbsp;&nbsp;{idioma}<br />
